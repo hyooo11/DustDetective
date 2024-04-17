@@ -15,3 +15,35 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  color: rgb(50, 50, 40);
+  font-size: 16px;
+  line-height: 1.4;
+  z-index: 1;
+  overflow: hidden;
+}
+body {
+  background-color: #f5f4f0;
+  /* background-image: url(/media/img/bg.png);
+  background-repeat: no-repeat;
+  background-position: top left; */
+  background-size: 100px;
+}
+.bg_deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 120px;
+}
+.issue_no {
+  text-align: right;
+}
+.gloval-wrap {
+  padding: 1rem;
+}

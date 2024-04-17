@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/component/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const today = new Date();
+  var year = today.getFullYear();
+  var month = (today.getMonth() + 1).toString().padStart(2, "0");
+  var day = today.getDate().toString().padStart(2, "0");
+  const formattedDate = year + month + day;
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body className={inter.className}>
+        <div className="gloval-wrap">
+          <div className="bg_deco">
+            <img src="/media/img/bg.png" alt="데코" />
+          </div>
+          <div className="issue_no">{`Issue No. ${formattedDate}`}</div>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
