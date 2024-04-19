@@ -15,6 +15,28 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+@font-face {
+  font-family: "Miracle";
+  font-weight: 400;
+  src: url("/media/font/Miracle.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Vogue";
+  font-weight: 400;
+  src: url("/media/font/Vogue.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Times";
+  font-weight: 400;
+  src: url("/media/font/OPTITimes-Roman.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Times-Italic";
+  font-weight: 400;
+  src: url("/media/font/OPTITimesRoman-Italic.ttf") format("truetype");
+}
+
 *,
 *::before,
 *::after {
@@ -25,7 +47,6 @@ html {
   font-size: 16px;
   line-height: 1.4;
   z-index: 1;
-  overflow: hidden;
 }
 body {
   background-color: #f5f4f0;
@@ -43,6 +64,7 @@ body {
 }
 .issue_no {
   text-align: right;
+  font-family: "Times-Italic";
 }
 .gloval-wrap {
   padding: 1rem;

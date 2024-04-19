@@ -25,17 +25,18 @@ const HeaderWrap = styled.header`
     background: rgb(50, 50, 40);
   }
   & > h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #333;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     text-align: center;
+    font-family: "Times";
   }
 `;
 
 const Header = () => {
   return (
     <HeaderWrap>
-      <h1>newspaper</h1>
+      <h1>Korea Sky Air Times</h1>
     </HeaderWrap>
   );
 };

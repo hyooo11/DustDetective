@@ -20,3 +20,20 @@ export const getDustStation = async (data: tmType) => {
   );
   return response;
 };
+
+//시도별 실시간 평균정보 조회 상세기능명세
+export const getDustSido = async () => {
+  const response = await axios({
+    method: "GET",
+    url: "http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureLIst",
+    params: {
+      serviceKey: KEY,
+      returnType: "JSON",
+      numOfRows: 1,
+      pageNo: 1,
+      itemCode: "pm10",
+      dataGubun: "hour",
+    },
+  });
+  return response;
+};

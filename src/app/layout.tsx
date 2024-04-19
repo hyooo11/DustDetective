@@ -28,6 +28,7 @@ export default function RootLayout({
             <img src="/media/img/bg.png" alt="데코" />
           </div>
           <div className="issue_no">{`Issue No. ${formattedDate}`}</div>
+
           <Header />
           {children}
         </div>
