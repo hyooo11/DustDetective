@@ -2,7 +2,8 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import { feature } from "topojson-client";
+// import { feature } from "topojson-client";
+import * as topojson from "topojson-client";
 import koreaData from "@/util/korea.json";
 
 // interface FeatureDataType {
@@ -10,10 +11,10 @@ import koreaData from "@/util/korea.json";
 // }
 
 let korea = JSON.parse(JSON.stringify(koreaData));
-const featureData = feature(korea, korea.objects["korea"]);
+const featureData = topojson.feature(korea, korea.objects["korea"]) as any;
 
 const Map = () => {
-  const chart = useRef<SVGSVGElement>(null);
+  const chart = useRef<HTMLDivElement>(null);
 
   const printD3 = () => {
     const width = 800; //지도의 넓이
@@ -27,7 +28,7 @@ const Map = () => {
       .scale(initialScale)
       .translate([initialX, initialY]);
 
-    const path = d3.geoPath().projection(projection);
+    const path: any = d3.geoPath().projection(projection);
 
     const svg = d3
       .select(chart.current)
@@ -41,7 +42,7 @@ const Map = () => {
       .enter()
       .append("path")
       .attr("d", path)
-      .attr("id", function (d) {
+      .attr("id", function (d: any) {
         return d.properties.CTP_ENG_NM;
       })
       .style("fill", "#333");
@@ -52,17 +53,17 @@ const Map = () => {
       .enter()
       .append("text")
       .attr("transform", translateTolabel)
-      .attr("id", function (d) {
+      .attr("id", function (d: any) {
         return "label-" + d.properties.CTP_ENG_NM;
       })
       .attr("text-anchor", "middle")
       .attr("text", ".35em")
-      .text(function (d) {
+      .text(function (d: any) {
         return d.properties.CTP_KOR_NM;
       })
       .style("fill", "#fff");
 
-    function translateTolabel(d) {
+    function translateTolabel(d: any) {
       var arr = path.centroid(d);
       // if (d.properties.CTPRVN_CD == 41) {
       //   //서울 경기도 이름 겹쳐서 경기도 내리기

@@ -1,11 +1,11 @@
 import DustInformation from "./DustSec/DustInformation";
-import MapView from "../map/MapView";
 
 const DustSec = () => {
   return (
-    <div>
-      미세먼지
-      <MapView />
+    <div className="flex">
+      <div>
+        <img src="media/img/image_01.jpg" alt="이미지01" />
+      </div>
       <DustInformation />
     </div>
   );
